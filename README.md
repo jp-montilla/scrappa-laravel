@@ -118,7 +118,7 @@ $response = Scrappa::setApiKey('your-api-key')
     ->setBaseUrl('https://custom-api.com')
     ->setTimeout(60)
     ->addHeader('Custom-Header', 'value')
-    ->advanceSearchGmaps('Manila');
+    ->advanceSearchGmaps('Manila', ['zoom' => 3]);
 ```
 
 ## Response Structure
@@ -155,7 +155,7 @@ The package throws `InvalidArgumentException` for:
 
 ```php
 try {
-    $response = Scrappa::advanceSearchGmaps('Manila');
+    $response = Scrappa::advanceSearchGmaps('Manila', ['zoom' => 3]);
 } catch (InvalidArgumentException $e) {
     // Handle the error
     echo "Error: " . $e->getMessage();
@@ -167,7 +167,7 @@ try {
 For Google Maps advanced search, you can use these parameters:
 
 - `query` (required): The search term that will be used by the API (string)
-- `zoom` (optional): The level of detail displayed on the map (integer)
+- `zoom` (required): The level of detail displayed on the map. Minimum value is 3 (integer)
 - `lat` (optional): Latitude coordinate for the search center (float)
 - `lon` (optional): Longitude coordinate for the search center (float)  
 - `limit` (optional): Maximum number of results to return (integer)
