@@ -1,92 +1,179 @@
-# :package_description
+# Scrappa Laravel Package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-<!--delete-->
----
-This repo can be used to scaffold a Laravel package. Follow these steps to get started:
+A simple and clean Laravel wrapper for the Scrappa API, allowing you to make HTTP requests with parameters to interact with all Scrappa API endpoints. It's a pure API client package with no database dependencies.
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Have fun creating your package.
-4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-<!--/delete-->
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+## Features
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/:package_name.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/:package_name)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+- 🚀 Simple and clean API client
+- 🔧 Easy configuration
+- 📦 No database dependencies
+- 🎯 Google Maps advanced search
+- 💡 Laravel Facade support
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
+composer require johnpaulmontilla/scrappa
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
+php artisan vendor:publish --provider="JohnPaulMontilla\Scrappa\ScrappaServiceProvider"
+```
+
+## Configuration
+
+Add your Scrappa API credentials to your `.env` file:
+
+```env
+SCRAPPA_API_KEY=your_api_key_here
+SCRAPPA_BASE_URL=https://app.scrappa.co/api
+SCRAPPA_TIMEOUT=30
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    'api_key' => env('SCRAPPA_API_KEY', ''),
+    'base_url' => env('SCRAPPA_BASE_URL', 'https://app.scrappa.co/api'),
+    'timeout' => env('SCRAPPA_TIMEOUT', 30),
+    'defaults' => [
+        'zoom' => 5,
+        'limit' => 10,
+    ],
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
 ```
 
 ## Usage
 
+### Using the Facade
+
 ```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Basic search (only query required)
+$response = Scrappa::advanceSearchGmaps('Manila');
+
+// Advanced search with optional parameters
+$response = Scrappa::advanceSearchGmaps('Manila', [
+    'zoom' => 5,
+    'lat' => 14.5995,
+    'lon' => 120.9842,
+    'limit' => 10
+]);
+
+// Access the results
+echo "Query: " . $response['query'] . "\n";
+echo "Found " . count($response['results']['items']) . " results\n";
+
+foreach ($response['results']['items'] as $result) {
+    echo "Name: " . $result['name'] . "\n";
+    echo "Address: " . $result['full_address'] . "\n";
+    echo "Rating: " . ($result['rating'] ?? 'N/A') . "\n";
+    echo "Website: " . ($result['website'] ?? 'N/A') . "\n";
+    echo "---\n";
+}
 ```
 
-## Testing
+### Using Dependency Injection
 
-```bash
-composer test
+```php
+use JohnPaulMontilla\Scrappa\ScrappaClient;
+
+class MyController extends Controller
+{
+    public function __construct(private ScrappaClient $scrappa)
+    {
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $response = $this->scrappa->advanceSearchGmaps($query);
+        
+        return response()->json($response);
+    }
+}
 ```
 
-## Changelog
+### Generic GET Requests
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+For other API endpoints that support GET requests:
 
-## Contributing
+```php
+// GET request
+$response = Scrappa::get('/other-endpoint', [
+    'param1' => 'value1',
+    'param2' => 'value2'
+]);
+```
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+### Dynamic Configuration
 
-## Security Vulnerabilities
+You can configure the client at runtime:
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+```php
+$response = Scrappa::setApiKey('your-api-key')
+    ->setBaseUrl('https://custom-api.com')
+    ->setTimeout(60)
+    ->addHeader('Custom-Header', 'value')
+    ->advanceSearchGmaps('Manila');
+```
 
-## Credits
+## Response Structure
 
-- [:author_name](https://github.com/:author_username)
-- [All Contributors](../../contributors)
+The API returns a simple PHP array with the following structure:
+
+```php
+[
+    'query' => 'Manila',
+    'results' => [
+        'items' => [
+            [
+                'name' => 'Manila',
+                'rating' => 4.5,
+                'review_count' => 100,
+                'website' => 'http://example.com',
+                'full_address' => 'Metro Manila, Philippines',
+                'latitude' => 14.5995,
+                'longitude' => 120.9842,
+                'phone_numbers' => [],
+                'photos_sample' => [],
+                // ... and many more fields
+            ]
+        ]
+    ]
+]
+```
+
+## Error Handling
+
+The package throws `InvalidArgumentException` for:
+- Missing required query parameter
+- Missing API key
+
+```php
+try {
+    $response = Scrappa::advanceSearchGmaps('Manila');
+} catch (InvalidArgumentException $e) {
+    // Handle the error
+    echo "Error: " . $e->getMessage();
+}
+```
+
+## Available Parameters
+
+For Google Maps advanced search, you can use these parameters:
+
+- `query` (required): The search term that will be used by the API (string)
+- `zoom` (optional): The level of detail displayed on the map (integer)
+- `lat` (optional): Latitude coordinate for the search center (float)
+- `lon` (optional): Longitude coordinate for the search center (float)  
+- `limit` (optional): Maximum number of results to return (integer)
 
 ## License
 
