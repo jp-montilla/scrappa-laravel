@@ -41,10 +41,6 @@ return [
     'api_key' => env('SCRAPPA_API_KEY', ''),
     'base_url' => env('SCRAPPA_BASE_URL', 'https://app.scrappa.co/api'),
     'timeout' => env('SCRAPPA_TIMEOUT', 30),
-    'defaults' => [
-        'zoom' => 5,
-        'limit' => 10,
-    ],
 ];
 ```
 
@@ -93,7 +89,8 @@ class MyController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $response = $this->scrappa->advanceSearchGmaps($query);
+        $zoom = $request->input('zoom');
+        $response = $this->scrappa->advanceSearchGmaps($query, ['zoom' => $zoom]);
         
         return response()->json($response);
     }
@@ -175,6 +172,3 @@ For Google Maps advanced search, you can use these parameters:
 - `lon` (optional): Longitude coordinate for the search center (float)  
 - `limit` (optional): Maximum number of results to return (integer)
 
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

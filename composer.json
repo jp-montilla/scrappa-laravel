@@ -1,22 +1,23 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "johnpaulmontilla/scrappa-laravel",
+    "description": "A Laravel package for interacting with the Scrappa API",
     "keywords": [
-        ":vendor_name",
+        "scrappa",
         "laravel",
-        ":package_slug"
+        "api",
+        "scrappa-laravel"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/jp-montilla/scrappa-laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "John Paul Montilla",
+            "email": "johnpaul.montilla1330@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.3",
         "spatie/laravel-package-tools": "^1.16",
         "illuminate/contracts": "^11.0||^12.0"
     },
