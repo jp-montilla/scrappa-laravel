@@ -409,7 +409,7 @@ try {
 
 ## Available Parameters
 
-For Autocomplete Google Maps API, you only need query parameter:
+For Autocomplete - Google Maps API, you only need query parameter:
 
 - `query` (required): The partial search term to get autocomplete suggestions for (string)
 
