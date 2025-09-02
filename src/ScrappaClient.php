@@ -21,7 +21,7 @@ class ScrappaClient
      * @return array
      * @throws InvalidArgumentException
      */
-    public function advanceSearchGmaps(string $query, array $params = []): array
+    public function advancedSearchGmaps(string $query, array $params = []): array
     {
         if (empty($query)) {
             throw new InvalidArgumentException('Query parameter is required');
@@ -41,6 +41,25 @@ class ScrappaClient
         }, ARRAY_FILTER_USE_BOTH);
 
         return $this->client->get('maps/advance-search', $queryParams);
+    }
+
+    /**
+     * Perform an autocomplete on Google Maps
+     *
+     * @param string $query The search query (required)
+     * @return array
+     * @throws InvalidArgumentException
+     */
+    public function autoCompleteGmaps(string $query): array
+    {
+        if (empty($query)) {
+            throw new InvalidArgumentException('Query parameter is required');
+        }
+
+        // Build query parameters
+        $queryParams = ['query' => $query];
+
+        return $this->client->get('maps/autocomplete', $queryParams);
     }
 
     /**

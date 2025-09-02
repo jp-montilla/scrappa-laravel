@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \JohnPaulMontilla\Scrappa\ScrappaClient
  * 
- * @method static array advanceSearchGmaps(string $query, array $params = [])
+ * @method static array advancedSearchGmaps(string $query, array $params = [])
+ * @method static array autoCompleteGmaps(string $query)
  * @method static array get(string $endpoint, array $params = [])
  * @method static \JohnPaulMontilla\Scrappa\ScrappaClient setApiKey(string $apiKey)
  * @method static \JohnPaulMontilla\Scrappa\ScrappaClient setBaseUrl(string $baseUrl)

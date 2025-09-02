@@ -41,6 +41,11 @@ class RestClient
         $url = $this->buildUrl($endpoint, $params);
         $headers = $this->buildHeaders();
 
+        return [
+            'parameters' => $params,
+            'results' => $this->makeCurlRequest($url, $headers),
+        ];
+
         return $this->makeCurlRequest($url, $headers);
     }
 
