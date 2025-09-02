@@ -2,13 +2,23 @@
 
 A simple and clean Laravel wrapper for the Scrappa API, allowing you to make HTTP requests with parameters to interact with all Scrappa API endpoints. It's a pure API client package with no database dependencies.
 
-## Features
+---
 
-- 🚀 Simple and clean API client
-- 🔧 Easy configuration
-- 📦 No database dependencies
-- 🎯 Google Maps advanced search
-- 💡 Laravel Facade support
+## ✨ Features
+
+🚀 Simple and clean API client  
+🔧 Easy configuration  
+📦 No database dependencies  
+💡 Laravel Facade support  
+
+### Google Maps API Support
+- 🎯 Advanced Search  
+- 🔍 Autocomplete  
+- 🗺️ Simple Search  
+- 🏢 Business Details  
+- ⭐ Google Reviews  
+
+---
 
 ## Installation
 
@@ -44,9 +54,9 @@ return [
 ];
 ```
 
-## Usage
+## ⚡ Usage
 
-### Using the Facade
+## Using the Facade
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -96,8 +106,17 @@ class MyController extends Controller
     }
 }
 ```
+---
+### 🔍 Autocomplete Google Maps
 
-### Advanced Search Google Maps
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Autocomplete search with only the query parameter
+$response = Scrappa::autoCompleteGmaps('Manila');
+```
+
+### 🎯 Advanced Search Google Maps
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -116,7 +135,10 @@ $response = Scrappa::advancedSearchGmaps('Manila', [
 ]);
 ```
 
-### 📌 Sample Advanced Search API Response
+## 📌 Sample API Response
+
+### 🔍 Autocomplete
+Example response for `Scrappa::autoCompleteGmaps('Manila')`:
 
 ```php
 [
@@ -179,16 +201,8 @@ $response = Scrappa::advancedSearchGmaps('Manila', [
 ```
 
 
-### Autocomplete Google Maps
-
-```php
-use JohnPaulMontilla\Scrappa\Facades\Scrappa;
-
-// Autocomplete search with only the query parameter
-$response = Scrappa::autoCompleteGmaps('Manila');
-```
-
-### 📌 Sample Autocomplete API Response
+### 🎯 Advanced Search
+Example response for:  `Scrappa::autoCompleteGmaps('Manila', ['zoom' => 5])`:
 
 ```php
 [
@@ -282,7 +296,6 @@ $response = Scrappa::autoCompleteGmaps('Manila');
 ```
 
 
-
 ### Generic GET Requests
 
 For other API endpoints that support GET requests:
@@ -307,35 +320,6 @@ $response = Scrappa::setApiKey('your-api-key')
     ->advancedSearchGmaps('Manila', ['zoom' => 3]);
 ```
 
-## Response Structure
-
-The API returns a simple PHP array with the following structure:
-
-```php
-[
-    'parameters' => [
-        'query' => 'Manila',
-        'zoom' => 5,
-    ],
-    'results' => [
-        'items' => [
-            [
-                'name' => 'Manila',
-                'rating' => 4.5,
-                'review_count' => 100,
-                'website' => 'http://example.com',
-                'full_address' => 'Metro Manila, Philippines',
-                'latitude' => 14.5995,
-                'longitude' => 120.9842,
-                'phone_numbers' => [],
-                'photos_sample' => [],
-                // ... and many more fields
-            ]
-        ]
-    ]
-]
-```
-
 ## Error Handling
 
 The package throws `InvalidArgumentException` for:
@@ -353,6 +337,11 @@ try {
 
 ## Available Parameters
 
+For Autocomplete, you only need query parameter:
+
+- `query` (required): The partial search term to get autocomplete suggestions for (string)
+
+
 For Google Maps advanced search, you can use these parameters:
 
 - `query` (required): The search term that will be used by the API (string)
@@ -361,5 +350,4 @@ For Google Maps advanced search, you can use these parameters:
 - `lon` (optional): Longitude coordinate for the search center (float)  
 - `limit` (optional): Maximum number of results to return (integer)
 
-For Autocomplete, you only need query parameter:
-- `query` (required): The partial search term to get autocomplete suggestions for (string)
+
