@@ -18,13 +18,18 @@ class ScrappaClient
      *
      * @param string $query The search query (required)
      * @param array $params Additional parameters (zoom, lat, lon, limit)
+     * @param integer $params['zoom'] (required)
      * @return array
      * @throws InvalidArgumentException
      */
-    public function advanceSearchGmaps(string $query, array $params = []): array
+    public function advancedSearchGmaps(?string $query = null, array $params = []): array
     {
         if (empty($query)) {
-            throw new InvalidArgumentException('Query parameter is required');
+            throw new InvalidArgumentException('The "query" parameter is required.');
+        }
+
+        if (empty($params['zoom'])) {
+            throw new InvalidArgumentException('The "zoom" parameter is required.');
         }
 
         // Build query parameters - only query is required
@@ -37,10 +42,29 @@ class ScrappaClient
 
         // Filter out null/empty values except for query
         $queryParams = array_filter($queryParams, function ($value, $key) {
-            return $key === 'query' || (!is_null($value) && $value !== '');
+            return in_array($key, ['query', 'zoom'], true) || (!is_null($value) && $value !== '');
         }, ARRAY_FILTER_USE_BOTH);
 
         return $this->client->get('maps/advance-search', $queryParams);
+    }
+
+    /**
+     * Perform an autocomplete on Google Maps
+     *
+     * @param string $query The search query (required)
+     * @return array
+     * @throws InvalidArgumentException
+     */
+    public function autoCompleteGmaps(?string $query = null): array
+    {
+        if (empty($query)) {
+            throw new InvalidArgumentException('Query parameter is required');
+        }
+
+        // Build query parameters
+        $queryParams = ['query' => $query];
+
+        return $this->client->get('maps/autocomplete', $queryParams);
     }
 
     /**
