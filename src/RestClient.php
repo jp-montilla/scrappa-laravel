@@ -45,8 +45,6 @@ class RestClient
             'parameters' => $params,
             'results' => $this->makeCurlRequest($url, $headers),
         ];
-
-        return $this->makeCurlRequest($url, $headers);
     }
 
     /**
