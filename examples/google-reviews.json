@@ -1,0 +1,47 @@
+{
+    "parameters": {
+        "business_id": "0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2",
+        "sort": 1,
+        "limit": 1
+    },
+    "results": {
+        "items": [
+            {
+                "review_id": "ChdDSUhNMG9nS0VKS0ZwZk9iNDlXTnVnRRAB",
+                "review_text": [
+                    "Being a college student, I really love this Starbucks. I often come here when I dont feel like studying at home. It is just 5 - 10 minutes away, so transportation is affordable and quick. The quiet environment helps me focus, and there's sockets almost everywhere so it is convenient since I always bring my laptop. I highly recommend this spot for students."
+                ],
+                "rating": 5,
+                "timestamp": 1748325690280686,
+                "review_link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VKS0ZwZk9iNDlXTnVnRRAB!2m1!1s0x0:0x6d9ee9a72ebf08a2!3m1!1s2@1:CIHM0ogKEJKFpfOb49WNugE%7CCgwIuqrVwQYQsNvrhQE%7C?hl=en",
+                "review_likes": null,
+                "author_id": null,
+                "author_link": null,
+                "author_name": "JERSEY KEAGAN CAMUNGOL",
+                "author_profile_photo": "https://lh3.googleusercontent.com/a-/ALV-UjXtO5Ny5k0OgBr2ljEqFoIEwwr-9iMTIpspjmnQ-l0EhCpI360=s120-c-rp-mo-br100",
+                "author_review_count": 1,
+                "author_reviews_link": "https://www.google.com/maps/contrib/102970533275200696571/reviews?hl=en",
+                "author_local_guide_level": 2,
+                "owner_response_timestamp": null,
+                "owner_response_text": null,
+                "owner_response_language": null,
+                "review_language": [
+                    "en"
+                ],
+                "review_form": {
+                    "How much did you spend per person?": "₱200–400",
+                    "Food": 5,
+                    "Service": 5,
+                    "Atmosphere": 5,
+                    "How would you describe the noise level?": "Quiet, easy to talk",
+                    "How long did you wait for a table?": "No wait",
+                    "What types of seating were available?": [
+                        "Indoor dining area",
+                        "Outdoor patio / terrace"
+                    ]
+                }
+            }
+        ],
+        "nextPage": "CAESY0NBRVFBUnBFUTJwRlNVRlNTWEJEWjI5QlVEZGZURUZVVW5SZlgxOWZSV2hFTlVoRmFrZFdjWGMzVlRnMlprazFUVUZCUVVGQlIyZHVPVEpTTkVOaFR5MXlSa1pqV1VGRFNVRQ=="
+    }
+}
