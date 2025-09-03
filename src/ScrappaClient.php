@@ -103,6 +103,25 @@ class ScrappaClient
         return $this->client->get(ScrappaEndpoint::MAPS_GOOGLE_REVIEW, $queryParams);
     }
 
+    /**
+     * Retrieve Google Reviews for a specific place.
+     *
+     * @param string $business_id The search query (required)
+     * @return array
+     * @throws InvalidArgumentException
+     */
+    public function businessDetailsGmaps(?string $business_id = null): array
+    {
+        if (empty($business_id)) {
+            throw new InvalidArgumentException('The "business_id" parameter is required.');
+        }
+
+        // Build query parameters
+        $queryParams = ['business_id' => $business_id];
+
+        return $this->client->get(ScrappaEndpoint::MAPS_BUSINESS_DETAILS, $queryParams);
+    }
+
 
     /**
      * Generic method to make GET requests with parameters

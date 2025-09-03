@@ -145,7 +145,7 @@ $response = Scrappa::advancedSearchGmaps('Manila', [
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 
-// Get Google Reviews (requires placeId and sort)
+// Get Google Reviews (requires business_id and sort)
 $response = Scrappa::googleReviewsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2', [
     'sort'  => 1,  // required
     'limit' => 1   // optional
@@ -161,6 +161,17 @@ $response = Scrappa::googleReviewsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2',
 ```
 > #### 📌 Sample API Response
 > See full response example here: [google-reviews.json](./examples/google-reviews.json)
+
+### 🏢 Business Details  
+
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Get Google Reviews (requires business_id)
+$response = Scrappa::businessDetailsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2');
+```
+> #### 📌 Sample API Response
+> See full response example here: [business-details.json](./examples/business-details.json)
 
 
 ## 🔧 Advanced Usage

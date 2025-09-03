@@ -1,0 +1,233 @@
+{
+    "parameters": {
+        "business_id": "0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2"
+    },
+    "results": [
+        {
+            "business_id": "0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2",
+            "google_id": "0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2",
+            "place_id": "ChIJTwIaCi7TlzMRogi_Lqfpnm0",
+            "google_mid": "/g/0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2",
+            "phone_number": null,
+            "name": "Starbucks™ - Revilla Business Park",
+            "latitude": 14.438949899999999,
+            "longitude": 120.9495803,
+            "full_address": "CWQX+MXR Starbucks™ - Revilla Business Park, Bacoor, Cavite, Philippinen",
+            "review_count": 267,
+            "rating": 4.5,
+            "timezone": "Asia/Manila",
+            "opening_status": "Geöffnet ⋅ Schließt um 01:00",
+            "working_hours": {
+                "Mittwoch": [
+                    "06:30–01:00"
+                ],
+                "Donnerstag": [
+                    "06:30–01:30"
+                ],
+                "Freitag": [
+                    "06:30–01:30"
+                ],
+                "Samstag": [
+                    "06:30–01:30"
+                ],
+                "Sonntag": [
+                    "06:30–01:00"
+                ],
+                "Montag": [
+                    "06:30–01:00"
+                ],
+                "Dienstag": [
+                    "06:30–01:00"
+                ]
+            },
+            "website": "http://www.starbucks.ph/",
+            "tld": "www.starbucks.ph",
+            "verified": false,
+            "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2",
+            "cid": "7899007700707510434",
+            "reviews_link": "https://search.google.com/local/reviews?placeid=ChIJTwIaCi7TlzMRogi_Lqfpnm0&authuser=0&hl=de&gl=DE",
+            "owner_id": null,
+            "owner_link": null,
+            "owner_name": null,
+            "booking_link": "https://www.foodpanda.ph/food-ordering?c=ph&s=s&vc=l73b&adj_t=1naixy2v_1nsybtos&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=foodpanda%3A%2F%2F%3Fc%3Dph%26s%3Ds%26vc%3Dl73b&adj_fallback=https://foodpanda.ph/restaurant/l73b/starbucks-revilla-business-park?utm_campaign=google_reserve_place_order_action_CH-SEO_&adj_redirect_macos=https://foodpanda.ph/restaurant/l73b/starbucks-revilla-business-park?utm_campaign=google_reserve_place_order_action_CH-SEO_",
+            "reservations_link": "https://www.foodpanda.ph/food-ordering?c=ph&s=s&vc=l73b&adj_t=1naixy2v_1nsybtos&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=foodpanda%3A%2F%2F%3Fc%3Dph%26s%3Ds%26vc%3Dl73b&adj_fallback=https://foodpanda.ph/restaurant/l73b/starbucks-revilla-business-park?utm_campaign=google_reserve_place_order_action_CH-SEO_&adj_redirect_macos=https://foodpanda.ph/restaurant/l73b/starbucks-revilla-business-park?utm_campaign=google_reserve_place_order_action_CH-SEO_",
+            "business_status": null,
+            "type": "coffee_shop",
+            "subtypes": [
+                "coffee_shop"
+            ],
+            "subtype_gcids": [],
+            "photos_sample": [
+                {
+                    "photo_id": null,
+                    "photo_url": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=vA6GE3T5MzU37ia87o_TVw&cb_client=search.gws-prod.gps&w=211&h=120&yaw=54.70361&pitch=0&thumbfov=100",
+                    "photo_url_large": null,
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "street_view",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                },
+                {
+                    "photo_id": 3024,
+                    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np_auWYmGP9hSpDFitBXqGgjwBTZGbMA4aIzZUdk8C8GPXB0bBwvCdv4WZmOdDEHIORlnC4ZpxFU6zjdMdBq4VMV1BX4D19SmeN8FzXLrDrgy8Wun143TsVZxU0QaC-rOtQL-_T=w140-h186-k-no",
+                    "photo_url_large": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np_auWYmGP9hSpDFitBXqGgjwBTZGbMA4aIzZUdk8C8GPXB0bBwvCdv4WZmOdDEHIORlnC4ZpxFU6zjdMdBq4VMV1BX4D19SmeN8FzXLrDrgy8Wun143TsVZxU0QaC-rOtQL-_T=w2000-h1100-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "photo",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                },
+                {
+                    "photo_id": 3120,
+                    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrnUPycGbdcrdMm9h_YIARqnuXWTmSYvAL8QKMmjFFdUj6vckbTJfAzhpOfnXAtNEqi6xExpMYvRK6CC1emhW0wgcup7GRIhqvcX6VC51WEgrBpIHfYgqbqi8di50O2ZYF7kyI=w86-h114-k-no",
+                    "photo_url_large": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrnUPycGbdcrdMm9h_YIARqnuXWTmSYvAL8QKMmjFFdUj6vckbTJfAzhpOfnXAtNEqi6xExpMYvRK6CC1emhW0wgcup7GRIhqvcX6VC51WEgrBpIHfYgqbqi8di50O2ZYF7kyI=w2000-h1100-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "photo",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                },
+                {
+                    "photo_id": 3120,
+                    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrnUPycGbdcrdMm9h_YIARqnuXWTmSYvAL8QKMmjFFdUj6vckbTJfAzhpOfnXAtNEqi6xExpMYvRK6CC1emhW0wgcup7GRIhqvcX6VC51WEgrBpIHfYgqbqi8di50O2ZYF7kyI=w408-h544-k-no",
+                    "photo_url_large": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrnUPycGbdcrdMm9h_YIARqnuXWTmSYvAL8QKMmjFFdUj6vckbTJfAzhpOfnXAtNEqi6xExpMYvRK6CC1emhW0wgcup7GRIhqvcX6VC51WEgrBpIHfYgqbqi8di50O2ZYF7kyI=w2000-h1100-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "photo",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                },
+                {
+                    "photo_id": 3120,
+                    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrnUPycGbdcrdMm9h_YIARqnuXWTmSYvAL8QKMmjFFdUj6vckbTJfAzhpOfnXAtNEqi6xExpMYvRK6CC1emhW0wgcup7GRIhqvcX6VC51WEgrBpIHfYgqbqi8di50O2ZYF7kyI=w224-h298-k-no",
+                    "photo_url_large": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrnUPycGbdcrdMm9h_YIARqnuXWTmSYvAL8QKMmjFFdUj6vckbTJfAzhpOfnXAtNEqi6xExpMYvRK6CC1emhW0wgcup7GRIhqvcX6VC51WEgrBpIHfYgqbqi8di50O2ZYF7kyI=w2000-h1100-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "photo",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                },
+                {
+                    "photo_id": 3000,
+                    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no7qqUCavToLCNPDnwSufZbsbRTEd-PupfztuuafsUl3UUfA9OaccZk7zucljICTrat1_c-Yie95R_dUSXAXOSuI-YBb46y_XzP7VIKhczeZvodQL68tCmIfuCboxKd7VLDnbekpg=w224-h298-k-no",
+                    "photo_url_large": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no7qqUCavToLCNPDnwSufZbsbRTEd-PupfztuuafsUl3UUfA9OaccZk7zucljICTrat1_c-Yie95R_dUSXAXOSuI-YBb46y_XzP7VIKhczeZvodQL68tCmIfuCboxKd7VLDnbekpg=w2000-h1100-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "photo",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                },
+                {
+                    "photo_id": 1080,
+                    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqH3RbszI9x2tZSh45TfJwUg2h4v0dRzCCyqYPEJZNIgqpbHo-WmJx0UmIK-HgbDMualwFNYEPbjRYx2TZ0UxHOO8l5UJo5TnM7Q8Ktop1PgVKor-vBh7mIVD0G1u7-lDsu2PU=w224-h398-k-no",
+                    "photo_url_large": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqH3RbszI9x2tZSh45TfJwUg2h4v0dRzCCyqYPEJZNIgqpbHo-WmJx0UmIK-HgbDMualwFNYEPbjRYx2TZ0UxHOO8l5UJo5TnM7Q8Ktop1PgVKor-vBh7mIVD0G1u7-lDsu2PU=w2000-h1100-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": null,
+                    "longitude": null,
+                    "type": "photo",
+                    "photo_datetime_utc": null,
+                    "photo_timestamp": null
+                }
+            ],
+            "global_plus_code": null,
+            "compound_plus_code": null,
+            "reviews_per_rating": {
+                "1": 18,
+                "2": 2,
+                "3": 10,
+                "4": 37,
+                "5": 200
+            },
+            "photo_count": 7,
+            "about": {
+                "summary": null,
+                "details": {
+                    "Serviceoptionen": {
+                        "Sitzplätze im Freien": true,
+                        "Lieferdienst": true,
+                        "Drive-in": true,
+                        "Service/Leistungen vor Ort": true,
+                        "Zum Mitnehmen": true,
+                        "Speisen vor Ort": true
+                    },
+                    "Highlights": {
+                        "Große Auswahl an Teesorten": true,
+                        "Gute Desserts": true,
+                        "Guter Kaffee": true
+                    },
+                    "Besonders beliebt": {
+                        "Frühstück": true,
+                        "Allein speisen": true,
+                        "Geeignet zum Arbeiten am Laptop": true
+                    },
+                    "Barrierefreiheit": {
+                        "Rollstuhlgerechte Sitzgelegenheiten": true,
+                        "Rollstuhlgerechter Eingang": true,
+                        "Rollstuhlgerechter Parkplatz": true,
+                        "Rollstuhlgerechtes WC": true
+                    },
+                    "Angebote": {
+                        "Essen bis spätabends": true,
+                        "Kaffee": true,
+                        "Kleine Gerichte zum Teilen": true,
+                        "Schnelle Mahlzeit": true
+                    },
+                    "Speiseoptionen": {
+                        "Frühstück": true,
+                        "Brunch": true,
+                        "Mittagessen": true,
+                        "Süßspeisen": true,
+                        "Sitzgelegenheiten": true
+                    },
+                    "Ausstattung": {
+                        "WC": true
+                    },
+                    "Ambiente": {
+                        "Angesagt": true,
+                        "Gemütlich": true,
+                        "Zwanglos": true
+                    },
+                    "Publikum": {
+                        "Gruppen": true,
+                        "Hochschulstudenten": true,
+                        "Touristen": true
+                    },
+                    "Planung": {
+                        "Reservierungen möglich": true
+                    },
+                    "Zahlungen": {
+                        "Debitkarten": true,
+                        "Kreditkarten": true,
+                        "Mobile Zahlungen per NFC": true
+                    },
+                    "Kinder": {
+                        "Hochstühle": true
+                    },
+                    "Parkplätze": {
+                        "Kostenlose Parkplätze": true,
+                        "Parkplatzsituation": false
+                    }
+                }
+            },
+            "address": "CWQX+MXR",
+            "menu_link": null,
+            "order_link": "https://www.foodpanda.ph/food-ordering?c=ph&s=s&vc=l73b&adj_t=1naixy2v_1nsybtos&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=foodpanda%3A%2F%2F%3Fc%3Dph%26s%3Ds%26vc%3Dl73b&adj_fallback=https://foodpanda.ph/restaurant/l73b/starbucks-revilla-business-park?utm_campaign=google_reserve_place_order_action_CH-SEO_&adj_redirect_macos=https://foodpanda.ph/restaurant/l73b/starbucks-revilla-business-park?utm_campaign=google_reserve_place_order_action_CH-SEO_",
+            "price_level": null,
+            "district": null,
+            "street_address": "CWQX+MXR",
+            "city": "Bacoor",
+            "zipcode": null,
+            "state": "Philippinen",
+            "country": "Cavite",
+            "emails_and_contacts": null,
+            "share_link": "https://maps.app.goo.gl/Q2hJSlR3SW"
+        }
+    ]
+}
