@@ -1,0 +1,85 @@
+{
+    "parameters": {
+        "query": "Manil"
+    },
+    "results": {
+        "query": "Manil",
+        "suggestions": [
+            {
+                "type": "place",
+                "google_id": "0xd0cda433fa6537d:0x43be781a894fa2b5",
+                "place_id": "ChIJfVOmP0PaDA0RtaJPiRp4vkM=",
+                "main_text": "Manilva",
+                "main_text_highlights": [
+                    {
+                        "offset": "M",
+                        "length": "a"
+                    }
+                ],
+                "latitude": 36.3760794,
+                "longitude": -5.2508156999999995,
+                "country": "ES"
+            },
+            {
+                "type": "place",
+                "google_id": "0x3397ca03571ec38b:0x69d1d5751069c11f",
+                "place_id": "ChIJi8MeVwPKlzMRH8FpEHXV0Wk=",
+                "main_text": "Manila",
+                "main_text_highlights": [
+                    {
+                        "offset": "M",
+                        "length": "a"
+                    }
+                ],
+                "latitude": 14.5995133,
+                "longitude": 120.984234,
+                "country": "PH"
+            },
+            {
+                "type": "place",
+                "google_id": "0x3397c8d26026386d:0x5fed23daac9278d0",
+                "place_id": "ChIJbTgmYNLIlzMR0HiSrNoj7V8=",
+                "main_text": "Manila",
+                "main_text_highlights": [
+                    {
+                        "offset": "M",
+                        "length": "a"
+                    }
+                ],
+                "latitude": 14.609053699999999,
+                "longitude": 121.0222565,
+                "country": "PH"
+            },
+            {
+                "type": "place",
+                "google_id": "0x33963092fa6e5db9:0x9fcd5f23701e7643",
+                "place_id": "ChIJuV1u-pIwljMRQ3YecCNfzZ8=",
+                "main_text": "Manila Bay",
+                "main_text_highlights": [
+                    {
+                        "offset": "M",
+                        "length": "a"
+                    }
+                ],
+                "latitude": 14.5188312,
+                "longitude": 120.7579834,
+                "country": "PH"
+            },
+            {
+                "type": "place",
+                "google_id": "0xd0cdb5de05a74d1:0x8548f04e01058742",
+                "place_id": "ChIJ0XRa4F3bDA0RQocFAU7wSIU=",
+                "main_text": "Manilva",
+                "main_text_highlights": [
+                    {
+                        "offset": "M",
+                        "length": "a"
+                    }
+                ],
+                "latitude": 36.3760684,
+                "longitude": -5.2507909,
+                "country": "ES"
+            }
+        ]
+    }
+}
