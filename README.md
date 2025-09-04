@@ -197,7 +197,7 @@ $response = Scrappa::maps()->businessDetails('0x3397d32e0a1a024f:0x6d9ee9a72ebf0
 > See full response example here: [business-details.json](./examples/business-details.json)
 
 
-### 🔎 Google Search API Support
+### Google Search API Support
 ---
 
 #### 🌐 Web Search
@@ -220,9 +220,27 @@ $response = Scrappa::googleSearch()->search("Nice dog", [
 > ##### 📌 Sample API Response
 > See full response example here: [web-search.json](./examples/web-search.json)
 
+### Google Translate API Support
+---
+
+#### 🈯 Translate Text
+
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Translate Text (requires all parameters)
+$response = Scrappa::googleSearch()->search([
+    'text' => 'Good Morning',   // required
+    'source' => 'en',           // required
+    'target' => 'tl',           // required
+]);
+```
+> ##### 📌 Sample API Response
+> See full response example here: [translate-text.json](./examples/translate-text.json)
+
 
 ### 🔧 Advanced Usage
-
+---
 #### Generic GET Requests
 
 For other API endpoints that support GET requests:
@@ -249,7 +267,7 @@ $response = Scrappa::setApiKey('your-api-key')
 ```
 
 ### Error Handling
-
+---
 The package uses custom exceptions under the `JohnPaulMontilla\Scrappa\Exceptions` namespace.
 
 - `ScrappaValidationException` – Missing or invalid parameters  
@@ -276,34 +294,56 @@ try {
 ```
 
 ### Available Parameters
+---
+#### Autocomplete – Google Maps API
+- `query` *(required, string)*: The partial search term to get autocomplete suggestions for  
 
-For Autocomplete - Google Maps API, you only need query parameter:
+#### Advanced Search – Google Maps API
+- `query` *(required, string)*: The search term that will be used by the API  
+- `zoom` *(required, integer)*: The level of detail displayed on the map (minimum value: 3)  
+- `lat` *(optional, float)*: Latitude coordinate for the search center  
+- `lon` *(optional, float)*: Longitude coordinate for the search center  
+- `limit` *(optional, integer)*: Maximum number of results to return  
 
-- `query` (required): The partial search term to get autocomplete suggestions for (string)
+#### Simple Search – Google Maps API
+- `query` *(required, string)*: The search term that the API will use  
 
+#### Google Reviews – Google Maps API
+- `business_id` *(required, string)*: The unique Google Business ID (format: `0x...:0x...`)  
+- `sort` *(required, integer)*: Sort order for reviews (`1=newest`, `2=highest`, `3=lowest`)  
+- `search` *(optional, string)*: Filter reviews by search term  
+- `limit` *(optional, integer)*: Maximum number of reviews to return  
+- `page` *(optional, string)*: Page token for pagination  
 
-For Advanced Search - Google Maps API, you can use these parameters:
+#### Business Details – Google Maps API
+- `business_id` *(required, string)*: The unique Google Business ID (format: `0x...:0x...`) that identifies a specific place or business on Google Maps  
 
-- `query` (required): The search term that will be used by the API (string)
-- `zoom` (required): The level of detail displayed on the map. Minimum value is 3 (integer)
-- `lat` (optional): Latitude coordinate for the search center (float)
-- `lon` (optional): Longitude coordinate for the search center (float)  
-- `limit` (optional): Maximum number of results to return (integer)
+#### Google Search – Google Search API
+- `query` *(required, string)*: The stuff you're searching for on Google Search.
+- `language` *(optional, string)*: Language code for search results (2-letter code)(e.g., `"en"`, `"tl"`)  
+- `amount` *(optional, integer)*: Number of results per page (default: 10)  
+- `page` *(optional, integer)*: The page number you want in the result (starting from 0). 
+- `as_qdr` *(optional, string)*: Time filter for results  
+  - `h1` = past hour  
+  - `h4` = past 4 hours  
+  - `d` = past day  
+  - `w` = past week  
+  - `m` = past month  
+  - `y` = past year  
+- `type` *(optional, string)*: Type of search  
+  - `news` = news results
+  - `isch` = images
+  - `vid` = videos
+> 👉 See the full list of accepted values here: [Google Cloud Translate Supported Languages](https://cloud.google.com/translate/docs/languages#try-it-for-yourself) 
 
-For Simple Search - Google Maps API, you only need query parameter:
+#### Google Translate – Google Translate API
+- `text` *(required, string)*: The word or phrase to translate  
+- `source` *(required, string)*: The source language of the text  
+- `target` *(required, string)*: The target language to translate into  
 
-- `query` (required): The search term that the API will use. (string)
-
-
-For Google Review - Google Maps API, you can use these parameters:
-
-- `business_id` (required): The unique Google Business ID (format: 0x...:0x...) (string)
-- `sort` (required): Sort order for reviews (1=newest, 2=highest, 3=lowest) (integer)
-- `search` (optional): Filter reviews by search term (string)
-- `limit` (optional): Maximum number of reviews to return (integer)
-- `page` (optional): Page token for pagination (string)  
-
-For Business Details - Google Maps API, you only need query parameter:
-
-- `business_id` (required): The unique Google Business ID (format: 0x...:0x...) that identifies a specific place or business on Google Maps. (string)
-
+> Example:
+> If you want to translate `"Good Morning"` from English to German:  
+> `text`: `"Good Morning"`  
+> `source`: `"en"`  
+> `target`: `"de"`  
+> 👉 See the full list of accepted values here: [Google Cloud Translate Supported Languages](https://cloud.google.com/translate/docs/languages#try-it-for-yourself)
