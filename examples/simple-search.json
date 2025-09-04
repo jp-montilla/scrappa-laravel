@@ -1,0 +1,286 @@
+{
+    "parameters": {
+        "query": "Restaurant in Intramuros, Manila"
+    },
+    "results": {
+        "items": [
+            {
+                "name": "Ilustrado Restaurant",
+                "price_level": "$$$",
+                "price_level_text": "Expensive",
+                "review_count": 2110,
+                "rating": 4.5,
+                "website": "https://www.facebook.com/ilustradorestaurant/",
+                "domain": "facebook.com",
+                "latitude": 14.5878564,
+                "longitude": 120.9773446,
+                "business_id": "0x3397ca2325ca6811:0x9a9a0a98387970a8",
+                "subtypes": [
+                    "Filipino restaurant",
+                    "Cafe",
+                    "Caterer",
+                    "Event venue",
+                    "Garden",
+                    "Restaurant",
+                    "Wedding venue"
+                ],
+                "district": "Intramuros",
+                "full_address": "744 Cabildo Street, corner Recoletos St, Intramuros, Manila, 1002 Metro Manila, Philippines",
+                "timezone": "Asia/Manila",
+                "short_description": "Filipino meals in nostalgic surrounds",
+                "full_description": "Traditional Filipino cuisine served in an old-school, Spanish-style venue with antique decor.",
+                "owner_id": "108058645304120051179",
+                "owner_name": "Ilustrado Restaurant (Owner)",
+                "owner_link": "https://maps.google.com/maps/contrib/108058645304120051179",
+                "order_link": null,
+                "google_mid": "/g/1tr79b9x",
+                "type": "restaurants",
+                "phone_numbers": [],
+                "place_id": "ChIJEWjKJSPKlzMRqHB5OJgKmpo",
+                "photos_sample": [
+                    {
+                        "photo_id": "CIHM0ogKEICAgID4lcmg8gE",
+                        "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqI2uNa7C6s2ZiW9-_65EANwKu-GIhS95Mk4VlO_po2K6eaQ45IdgiVaqk76QtpW1ZfaQrOk1bqZrvybubGg7dIeC1vko8oJqWsU6MUeqKDVYfEHFKNfXq2m-sDx0oDihZTRYY1pA=w129-h86-k-no",
+                        "photo_url_large": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgID4lcmg8gE?w3024-h3024-k-no",
+                        "video_thumbnail_url": null,
+                        "latitude": 14.587856385304761,
+                        "longitude": 120.97734458678106,
+                        "type": "photo"
+                    }
+                ],
+                "opening_hours": [
+                    {
+                        "day": "Thursday",
+                        "hours": [
+                            "8 AM–10 PM"
+                        ],
+                        "date": "2025-09-04",
+                        "special_day": null
+                    },
+                    {
+                        "day": "Friday",
+                        "hours": [
+                            "8 AM–10 PM"
+                        ],
+                        "date": "2025-09-05",
+                        "special_day": null
+                    },
+                    {
+                        "day": "Saturday",
+                        "hours": [
+                            "8 AM–10 PM"
+                        ],
+                        "date": "2025-09-06",
+                        "special_day": null
+                    },
+                    {
+                        "day": "Sunday",
+                        "hours": [
+                            "9 AM–6 PM"
+                        ],
+                        "date": "2025-09-07",
+                        "special_day": null
+                    },
+                    {
+                        "day": "Monday",
+                        "hours": [
+                            "8 AM–10 PM"
+                        ],
+                        "date": "2025-09-08",
+                        "special_day": null
+                    },
+                    {
+                        "day": "Tuesday",
+                        "hours": [
+                            "8 AM–10 PM"
+                        ],
+                        "date": "2025-09-09",
+                        "special_day": null
+                    },
+                    {
+                        "day": "Wednesday",
+                        "hours": [
+                            "8 AM–10 PM"
+                        ],
+                        "date": "2025-09-10",
+                        "special_day": null
+                    }
+                ],
+                "current_status": "Open ⋅ Closes 10 PM",
+                "neighborhood": "Intramuros",
+                "street_address_alt": "744 Cabildo Street, corner Recoletos St",
+                "street_address_full": "744 Cabildo Street, corner Recoletos St",
+                "city": "Manila",
+                "zip_code": "1002",
+                "state": "Metro Manila",
+                "country_code": "PH",
+                "location_info": [
+                    {
+                        "id": "3717662269903553233",
+                        "secondary_id": "4821066153236673682",
+                        "relevance": 0.99,
+                        "name": "657 Zone 70"
+                    },
+                    {
+                        "id": "3717662133112980363",
+                        "secondary_id": "7625110342878216479",
+                        "relevance": 0.9,
+                        "name": "Manila"
+                    },
+                    {
+                        "id": "6697235661544321825",
+                        "secondary_id": "5788384421854036150",
+                        "relevance": 0.75,
+                        "name": "Eurasia"
+                    },
+                    {
+                        "id": "3838864218157506081",
+                        "secondary_id": "1926661682396279329",
+                        "relevance": 0.75,
+                        "name": "Far East"
+                    },
+                    {
+                        "id": "3717404372963486749",
+                        "secondary_id": "4132107282862148578",
+                        "relevance": 0.75,
+                        "name": "Greater Manila Area"
+                    },
+                    {
+                        "id": "3717641156112175187",
+                        "secondary_id": "4409467438094528182",
+                        "relevance": 0.75,
+                        "name": "Manila Metropolitan Area"
+                    },
+                    {
+                        "id": "3715755496563584323",
+                        "secondary_id": "5109990782336720398",
+                        "relevance": 0.8,
+                        "name": "Luzon"
+                    },
+                    {
+                        "id": "3717661732541313583",
+                        "secondary_id": "4512471599186466983",
+                        "relevance": 0.82,
+                        "name": "Metro Manila"
+                    },
+                    {
+                        "id": "3620985503207644771",
+                        "secondary_id": "8667055366118955607",
+                        "relevance": 0.5,
+                        "name": "Philippines"
+                    },
+                    {
+                        "id": "3717660823299438701",
+                        "secondary_id": "6912220425188702416",
+                        "relevance": 0.81,
+                        "name": "Metro Manila"
+                    },
+                    {
+                        "id": "3245111407805806961",
+                        "secondary_id": "9097027281001183143",
+                        "relevance": 0.75,
+                        "name": "East Indies"
+                    },
+                    {
+                        "id": "3617427754144894165",
+                        "secondary_id": "2929326679793671057",
+                        "relevance": 0.75,
+                        "name": "South East Asia"
+                    },
+                    {
+                        "id": "3717662381085942267",
+                        "secondary_id": "332914143646497288",
+                        "relevance": 0.99,
+                        "name": "Intramuros"
+                    }
+                ],
+                "attributes": {
+                    "service_options": {
+                        "Outdoor seating": true,
+                        "Delivery": true,
+                        "Onsite services": true,
+                        "Takeout": true,
+                        "Dine-in": true
+                    },
+                    "highlights": {
+                        "Great cocktails": true,
+                        "Great coffee": true,
+                        "Great dessert": true,
+                        "Great tea selection": true,
+                        "Great wine list": true,
+                        "Live music": true
+                    },
+                    "popular_for": {
+                        "Lunch": true,
+                        "Dinner": true,
+                        "Solo dining": true
+                    },
+                    "accessibility": {
+                        "Wheelchair accessible entrance": true,
+                        "Wheelchair accessible parking lot": true,
+                        "Wheelchair accessible restroom": true,
+                        "Wheelchair accessible seating": true
+                    },
+                    "offerings": {
+                        "Alcohol": true,
+                        "Beer": true,
+                        "Cocktails": true,
+                        "Coffee": true,
+                        "Hard liquor": true,
+                        "Private dining room": true,
+                        "Small plates": true,
+                        "Wine": true
+                    },
+                    "dining_options": {
+                        "Breakfast": true,
+                        "Brunch": true,
+                        "Lunch": true,
+                        "Dinner": true,
+                        "Catering": true,
+                        "Dessert": true,
+                        "Seating": true,
+                        "Table service": true
+                    },
+                    "amenities": {
+                        "Bar onsite": true,
+                        "Restroom": true
+                    },
+                    "atmosphere": {
+                        "Casual": true,
+                        "Cozy": true,
+                        "Historic": true,
+                        "Romantic": true,
+                        "Trendy": true,
+                        "Upscale": true
+                    },
+                    "crowd": {
+                        "Groups": true,
+                        "Tourists": true
+                    },
+                    "planning": {
+                        "Brunch reservations recommended": true,
+                        "Lunch reservations recommended": true,
+                        "Dinner reservations recommended": true,
+                        "Accepts reservations": true
+                    },
+                    "payments": {
+                        "Credit cards": true,
+                        "Debit cards": true,
+                        "NFC mobile payments": true
+                    },
+                    "children": {
+                        "Good for kids": true,
+                        "High chairs": true
+                    },
+                    "parking": {
+                        "Free parking lot": true,
+                        "Parking": null
+                    },
+                    "pets": {
+                        "Dogs allowed outside": true
+                    }
+                }
+            }
+        ]
+    }
+}
