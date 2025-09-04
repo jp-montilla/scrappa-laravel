@@ -2,7 +2,9 @@
 
 namespace JohnPaulMontilla\Scrappa;
 
-use InvalidArgumentException;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaRequestException;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaResponseException;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaValidationException;
 
 class RestClient
 {
@@ -30,12 +32,14 @@ class RestClient
      * @param string $endpoint
      * @param array $params
      * @return array
-     * @throws InvalidArgumentException
+     * @throws ScrappaValidationException
+     * @throws ScrappaRequestException
+     * @throws ScrappaResponseException
      */
     public function get(string $endpoint, array $params = []): array
     {
         if (empty($this->apiKey)) {
-            throw new InvalidArgumentException('API key is required. Please set it in config or pass it to constructor');
+            throw ScrappaValidationException::missingParameter('api_key');
         }
 
         $url = $this->buildUrl($endpoint, $params);
@@ -88,7 +92,8 @@ class RestClient
      * @param string $url
      * @param array $headers
      * @return array
-     * @throws InvalidArgumentException
+     * @throws ScrappaRequestException
+     * @throws ScrappaResponseException
      */
     protected function makeCurlRequest(string $url, array $headers): array
     {
@@ -111,19 +116,17 @@ class RestClient
         curl_close($ch);
 
         if ($error) {
-            throw new InvalidArgumentException('cURL error: ' . $error);
+            throw ScrappaRequestException::curlError($error);
         }
 
         if ($httpCode >= 400) {
-            throw new InvalidArgumentException(
-                'API request failed: ' . $httpCode . ' - ' . $response
-            );
+            throw ScrappaRequestException::httpError($httpCode, $response);
         }
 
         $data = json_decode($response, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new InvalidArgumentException('Invalid JSON response: ' . json_last_error_msg());
+            throw ScrappaResponseException::invalidJson(json_last_error_msg());
         }
 
         return $data ?? [];

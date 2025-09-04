@@ -5,6 +5,7 @@ namespace JohnPaulMontilla\Scrappa\Clients;
 use InvalidArgumentException;
 use JohnPaulMontilla\Scrappa\RestClient;
 use JohnPaulMontilla\Scrappa\Support\ScrappaEndpoint;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaValidationException;
 
 class GoogleMapsClient
 {
@@ -17,12 +18,12 @@ class GoogleMapsClient
      *
      * @param string $query The search query (required)
      * @return array
-     * @throws InvalidArgumentException
+     * @throws ScrappaValidationException
      */
     public function autoComplete(?string $query = null): array
     {
         if (empty($query)) {
-            throw new InvalidArgumentException('Query is required for Google Maps autocomplete.');
+            throw ScrappaValidationException::missingParameter('query');
         }
 
         return $this->client->get(
@@ -38,16 +39,16 @@ class GoogleMapsClient
      * @param array $params Additional parameters (zoom, lat, lon, limit)
      * @param integer $params['zoom'] (required)
      * @return array
-     * @throws InvalidArgumentException
+     * @throws ScrappaValidationException
      */
     public function advancedSearch(?string $query = null, array $params = []): array
     {
         if (empty($query)) {
-            throw new InvalidArgumentException('The "query" parameter is required.');
+            throw ScrappaValidationException::missingParameter('query');
         }
 
         if (empty($params['zoom'])) {
-            throw new InvalidArgumentException('The "zoom" parameter is required.');
+            throw ScrappaValidationException::missingParameter('zoom');
         }
 
 
@@ -75,16 +76,16 @@ class GoogleMapsClient
      * @param array $params Additional parameters (search, sort, limit, page)
      * @param integer $params['sort'] (required)
      * @return array
-     * @throws InvalidArgumentException
+     * @throws ScrappaValidationException
      */
     public function googleReviews(?string $business_id = null, array $params = []): array
     {
         if (empty($business_id)) {
-            throw new InvalidArgumentException('The "business_id" parameter is required.');
+            throw ScrappaValidationException::missingParameter('business_id');
         }
 
         if (empty($params['sort'])) {
-            throw new InvalidArgumentException('The "sort" parameter is required.');
+            throw ScrappaValidationException::missingParameter('sort');
         }
 
         // Build query parameters
@@ -108,12 +109,12 @@ class GoogleMapsClient
      *
      * @param string $business_id The search query (required)
      * @return array
-     * @throws InvalidArgumentException
+     * @throws ScrappaValidationException
      */
     public function businessDetails(?string $business_id = null): array
     {
         if (empty($business_id)) {
-            throw new InvalidArgumentException('The "business_id" parameter is required.');
+            throw ScrappaValidationException::missingParameter('business_id');
         }
 
         return $this->client->get(
