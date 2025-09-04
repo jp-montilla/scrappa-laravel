@@ -67,6 +67,24 @@ class GoogleMapsClient
         return $this->client->get(ScrappaEndpoint::MAPS_ADVANCED_SEARCH, $queryParams);
     }
 
+    /**
+     * Perform an autocomplete on Google Maps
+     *
+     * @param string $query The search query (required)
+     * @return array
+     * @throws ScrappaValidationException
+     */
+    public function simpleSearch(?string $query = null): array
+    {
+        if (empty($query)) {
+            throw ScrappaValidationException::missingParameter('query');
+        }
+
+        return $this->client->get(
+            ScrappaEndpoint::MAP_SIMPLE_SEARCH,
+            ['query' => $query]
+        );
+    }
 
     /**
      * Retrieve Google Reviews for a specific place.

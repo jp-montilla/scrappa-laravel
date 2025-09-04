@@ -59,12 +59,12 @@ return [
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 
 // Advanced Search (requires both query and zoom parameter)
-$response = $response = Scrappa::advancedSearchGmaps('Manila', [
+$response = $response = Scrappa::maps()->advancedSearch('Manila', [
     'zoom' => 5, // required
 ]);
 
 // Advanced search with additional optional parameters
-$response = Scrappa::advancedSearchGmaps('Manila', [
+$response = Scrappa::maps()->advancedSearch('Manila', [
     'zoom' => 5,          // required
     'lat' => 14.5995,     // optional
     'lon' => 120.9842,    // optional
@@ -91,15 +91,13 @@ use JohnPaulMontilla\Scrappa\ScrappaClient;
 
 class MyController extends Controller
 {
-    public function __construct(private ScrappaClient $scrappa)
-    {
-    }
+    public function __construct(private ScrappaClient $scrappa) {}
 
     public function search(Request $request)
     {
         $query = $request->input('query');
         $zoom = $request->input('zoom');
-        $response = $this->scrappa->advancedSearchGmaps($query, ['zoom' => $zoom]);
+        $response = $this->scrappa->maps()->advancedSearch($query, ['zoom' => $zoom]);
         
         return response()->json($response);
     }
@@ -114,7 +112,7 @@ class MyController extends Controller
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 
 // Autocomplete search with only the query parameter
-$response = Scrappa::autoCompleteGmaps('Manil');
+$response = Scrappa::maps()->autoComplete('Manil');
 ```
 > #### 📌 Sample API Response
 > See full response example here: [autocomplete.json](./examples/autocomplete.json)
@@ -125,12 +123,12 @@ $response = Scrappa::autoCompleteGmaps('Manil');
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 
 // Advanced Search (requires both query and zoom parameter)
-$response = $response = Scrappa::advancedSearchGmaps('Manila', [
+$response = $response = Scrappa::maps()->advancedSearch('Manila', [
     'zoom' => 5,
 ]);
 
 // Advanced search with additional optional parameters
-$response = Scrappa::advancedSearchGmaps('Manila', [
+$response = Scrappa::maps()->advancedSearch('Manila', [
     'zoom' => 5,          // required
     'lat' => 14.5995,     // optional
     'lon' => 120.9842,    // optional
@@ -140,19 +138,32 @@ $response = Scrappa::advancedSearchGmaps('Manila', [
 > #### 📌 Sample API Response
 > See full response example here: [advanced-search.json](./examples/advanced-search.json)
 
+
+### 🗺️ Simple Search 
+
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Autocomplete search with only the query parameter
+$response = Scrappa::maps()->simpleSearch('Restaurant in Intramuros, Manila');
+```
+
+> #### 📌 Sample API Response
+> See full response example here: [simple-search.json](./examples/simple-search.json)
+
 ### ⭐ Google Reviews
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 
 // Get Google Reviews (requires business_id and sort)
-$response = Scrappa::googleReviewsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2', [
+$response = Scrappa::maps()->googleReviews('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2', [
     'sort'  => 1,  // required
     'limit' => 1   // optional
 ]);
 
 // Get Google Reviews with additional optional filters
-$response = Scrappa::googleReviewsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2',[
+$response = Scrappa::maps()->googleReviews('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2',[
     'sort' => 1,                    // required
     'search' => 'Place is good',    // optional
     'limit' => 4,                   // optional
@@ -168,7 +179,7 @@ $response = Scrappa::googleReviewsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2',
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 
 // Get Google Reviews (requires business_id)
-$response = Scrappa::businessDetailsGmaps('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2');
+$response = Scrappa::maps()->businessDetails('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2');
 ```
 > #### 📌 Sample API Response
 > See full response example here: [business-details.json](./examples/business-details.json)
@@ -197,21 +208,34 @@ $response = Scrappa::setApiKey('your-api-key')
     ->setBaseUrl('https://custom-api.com')
     ->setTimeout(60)
     ->addHeader('Custom-Header', 'value')
-    ->advancedSearchGmaps('Manila', ['zoom' => 3]);
+    ->maps()
+    ->advancedSearch('Manila', ['zoom' => 3]);
 ```
 
 ## Error Handling
 
-The package throws `InvalidArgumentException` for:
-- Missing required query parameter
-- Missing API key
+The package uses custom exceptions under the `JohnPaulMontilla\Scrappa\Exceptions` namespace.
+
+- `ScrappaValidationException` – Missing or invalid parameters  
+- `ScrappaAuthException` – Authentication issues (e.g., missing/invalid API key)  
+- `ScrappaHttpException` – Failed HTTP requests (4xx/5xx responses)  
+
+### Example
 
 ```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaValidationException;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaAuthException;
+use JohnPaulMontilla\Scrappa\Exceptions\ScrappaHttpException;
+
 try {
-    $response = Scrappa::advancedSearchGmaps('Manila', ['zoom' => 3]);
-} catch (InvalidArgumentException $e) {
-    // Handle the error
-    echo "Error: " . $e->getMessage();
+    $response = Scrappa::maps()->advancedSearch('Manila', ['zoom' => 3]);
+} catch (ScrappaValidationException $e) {
+    echo "Validation Error: " . $e->getMessage();
+} catch (ScrappaAuthException $e) {
+    echo "Authentication Error: " . $e->getMessage();
+} catch (ScrappaHttpException $e) {
+    echo "HTTP Error: " . $e->getMessage();
 }
 ```
 
@@ -230,6 +254,10 @@ For Advanced Search - Google Maps API, you can use these parameters:
 - `lon` (optional): Longitude coordinate for the search center (float)  
 - `limit` (optional): Maximum number of results to return (integer)
 
+For Simple Search - Google Maps API, you only need query parameter:
+
+- `query` (required): The search term that the API will use. (string)
+
 
 For Google Review - Google Maps API, you can use these parameters:
 
@@ -238,4 +266,8 @@ For Google Review - Google Maps API, you can use these parameters:
 - `search` (optional): Filter reviews by search term (string)
 - `limit` (optional): Maximum number of reviews to return (integer)
 - `page` (optional): Page token for pagination (string)  
+
+For Business Details - Google Maps API, you only need query parameter:
+
+- `business_id` (required): The unique Google Business ID (format: 0x...:0x...) that identifies a specific place or business on Google Maps. (string)
 
