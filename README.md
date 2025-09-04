@@ -117,7 +117,7 @@ class MyController extends Controller
 ```
 
 ### 📍 Google Maps API Support
-
+---
 #### 🔍 Autocomplete
 
 ```php
@@ -193,11 +193,12 @@ use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 // Get Google Reviews (requires business_id)
 $response = Scrappa::maps()->businessDetails('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2');
 ```
-> #### 📌 Sample API Response
+> ##### 📌 Sample API Response
 > See full response example here: [business-details.json](./examples/business-details.json)
 
 
 ### 🔎 Google Search API Support
+---
 
 #### 🌐 Web Search
 
