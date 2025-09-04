@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Facade;
  * 
  * @method static array advancedSearchGmaps(?string $query = null, array $params = [])
  * @method static array autoCompleteGmaps(?string $query = null)
+ * @method static array googleReviewsGmaps(?string $query = null, array $params = [])
+ * @method static array businessDetailsGmaps(?string $query = null)
  * @method static array get(string $endpoint, array $params = [])
  * @method static \JohnPaulMontilla\Scrappa\ScrappaClient setApiKey(string $apiKey)
  * @method static \JohnPaulMontilla\Scrappa\ScrappaClient setBaseUrl(string $baseUrl)
