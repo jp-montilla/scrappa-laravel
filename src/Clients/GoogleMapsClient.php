@@ -74,7 +74,7 @@ class GoogleMapsClient
      * @return array
      * @throws ScrappaValidationException
      */
-    public function simpeSearch(?string $query = null): array
+    public function simpleSearch(?string $query = null): array
     {
         if (empty($query)) {
             throw ScrappaValidationException::missingParameter('query');
