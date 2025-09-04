@@ -4,17 +4,29 @@ A simple and clean Laravel wrapper for the Scrappa API, allowing you to make HTT
 
 ## ✨ Features
 
-🚀 Simple and clean API client  
-🔧 Easy configuration  
-📦 No database dependencies  
-💡 Laravel Facade support  
+🚀 Simple and clean API client
+🔧 Easy configuration
+📦 No database dependencies
+💡 Laravel Facade support
 
 ### Google Maps API Support
-- 🎯 Advanced Search  
-- 🔍 Autocomplete  
-- 🗺️ Simple Search  
-- ⭐ Google Reviews  
-- 🏢 Business Details  
+- 🎯 Advanced Search
+- 🔍 Autocomplete 
+- 🗺️ Simple Search 
+- ⭐ Google Reviews
+- 🏢 Business Details
+
+### Google Search API Support
+- 🌐 Web Search
+
+### Google Translate API Support
+- 🈯 Translate Text
+
+### Google Images API Support
+- 🖼️ Image Search
+
+### YouTube API Support
+- 📹 Video Info 
 
 
 ## Installation
@@ -53,7 +65,7 @@ return [
 
 ## ⚡ Usage
 
-### Using the Facade
+#### Using the Facade
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -84,7 +96,7 @@ foreach ($response['results']['items'] as $result) {
 }
 ```
 
-### Using Dependency Injection
+#### Using Dependency Injection
 
 ```php
 use JohnPaulMontilla\Scrappa\ScrappaClient;
@@ -104,9 +116,9 @@ class MyController extends Controller
 }
 ```
 
-## 📍 Google Maps API Support
-
-### 🔍 Autocomplete
+### 📍 Google Maps API Support
+---
+#### 🔍 Autocomplete
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -114,10 +126,10 @@ use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 // Autocomplete search with only the query parameter
 $response = Scrappa::maps()->autoComplete('Manil');
 ```
-> #### 📌 Sample API Response
+> ##### 📌 Sample API Response
 > See full response example here: [autocomplete.json](./examples/autocomplete.json)
 
-### 🎯 Advanced Search
+#### 🎯 Advanced Search
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -135,11 +147,11 @@ $response = Scrappa::maps()->advancedSearch('Manila', [
     'limit' => 10         // optional
 ]);
 ```
-> #### 📌 Sample API Response
+> ##### 📌 Sample API Response
 > See full response example here: [advanced-search.json](./examples/advanced-search.json)
 
 
-### 🗺️ Simple Search 
+#### 🗺️ Simple Search 
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -148,10 +160,10 @@ use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 $response = Scrappa::maps()->simpleSearch('Restaurant in Intramuros, Manila');
 ```
 
-> #### 📌 Sample API Response
+> ##### 📌 Sample API Response
 > See full response example here: [simple-search.json](./examples/simple-search.json)
 
-### ⭐ Google Reviews
+#### ⭐ Google Reviews
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -170,10 +182,10 @@ $response = Scrappa::maps()->googleReviews('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a
     'page' => 'CAESY0NBR....'       // optional
 ]);
 ```
-> #### 📌 Sample API Response
+> ##### 📌 Sample API Response
 > See full response example here: [google-reviews.json](./examples/google-reviews.json)
 
-### 🏢 Business Details  
+#### 🏢 Business Details  
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -181,13 +193,37 @@ use JohnPaulMontilla\Scrappa\Facades\Scrappa;
 // Get Google Reviews (requires business_id)
 $response = Scrappa::maps()->businessDetails('0x3397d32e0a1a024f:0x6d9ee9a72ebf08a2');
 ```
-> #### 📌 Sample API Response
+> ##### 📌 Sample API Response
 > See full response example here: [business-details.json](./examples/business-details.json)
 
 
-## 🔧 Advanced Usage
+### 🔎 Google Search API Support
+---
 
-### Generic GET Requests
+#### 🌐 Web Search
+
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Web Search (requires query parameter)
+$response = $response = Scrappa::googleSearch()->search('Nice dog');
+
+// Web Search with additional optional parameters
+$response = Scrappa::googleSearch()->search("Nice dog", [
+    'language' => 'tl', // optional
+    'amount' => 20,     // optional
+    'page' => 1,        // optional
+    'as_qdr' => 'h4'    // optional
+    'type' => 'isch'    // optional
+]);
+```
+> ##### 📌 Sample API Response
+> See full response example here: [web-search.json](./examples/web-search.json)
+
+
+### 🔧 Advanced Usage
+
+#### Generic GET Requests
 
 For other API endpoints that support GET requests:
 
@@ -199,7 +235,7 @@ $response = Scrappa::get('/other-endpoint', [
 ]);
 ```
 
-### Dynamic Configuration
+#### Dynamic Configuration
 
 You can configure the client at runtime:
 
@@ -212,7 +248,7 @@ $response = Scrappa::setApiKey('your-api-key')
     ->advancedSearch('Manila', ['zoom' => 3]);
 ```
 
-## Error Handling
+### Error Handling
 
 The package uses custom exceptions under the `JohnPaulMontilla\Scrappa\Exceptions` namespace.
 
@@ -220,7 +256,7 @@ The package uses custom exceptions under the `JohnPaulMontilla\Scrappa\Exception
 - `ScrappaAuthException` – Authentication issues (e.g., missing/invalid API key)  
 - `ScrappaHttpException` – Failed HTTP requests (4xx/5xx responses)  
 
-### Example
+#### Example
 
 ```php
 use JohnPaulMontilla\Scrappa\Facades\Scrappa;
@@ -239,7 +275,7 @@ try {
 }
 ```
 
-## Available Parameters
+### Available Parameters
 
 For Autocomplete - Google Maps API, you only need query parameter:
 
