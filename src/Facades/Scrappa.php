@@ -7,10 +7,14 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \JohnPaulMontilla\Scrappa\ScrappaClient
  * 
- * @method static array advancedSearchGmaps(?string $query = null, array $params = [])
- * @method static array autoCompleteGmaps(?string $query = null)
- * @method static array googleReviewsGmaps(?string $query = null, array $params = [])
- * @method static array businessDetailsGmaps(?string $query = null)
+ * Facade for accessing Scrappa clients and global methods.
+ * 
+ * @method static \JohnPaulMontilla\Scrappa\Clients\GoogleMapsClient maps()
+ * @method static \JohnPaulMontilla\Scrappa\Clients\GoogleSearchClient search()
+ * @method static \JohnPaulMontilla\Scrappa\Clients\GoogleTranslateClient translate()
+ * @method static \JohnPaulMontilla\Scrappa\Clients\GoogleImagesClient images()
+ * @method static \JohnPaulMontilla\Scrappa\Clients\YouTubeClient youtube()
+ * 
  * @method static array get(string $endpoint, array $params = [])
  * @method static \JohnPaulMontilla\Scrappa\ScrappaClient setApiKey(string $apiKey)
  * @method static \JohnPaulMontilla\Scrappa\ScrappaClient setBaseUrl(string $baseUrl)

@@ -2,126 +2,49 @@
 
 namespace JohnPaulMontilla\Scrappa;
 
-use InvalidArgumentException;
-use JohnPaulMontilla\Scrappa\Support\ScrappaEndpoint;
+use JohnPaulMontilla\Scrappa\Clients\GoogleMapsClient;
+use JohnPaulMontilla\Scrappa\Clients\GoogleSearchClient;
+use JohnPaulMontilla\Scrappa\Clients\GoogleTranslateClient;
+use JohnPaulMontilla\Scrappa\Clients\GoogleImagesClient;
+use JohnPaulMontilla\Scrappa\Clients\YouTubeClient;
 
 class ScrappaClient
 {
-    protected RestClient $client;
+    public function __construct(
+        protected RestClient $client
+    ) {}
 
-    public function __construct(RestClient $client)
+    // -----------------------------
+    // Sub-clients
+    // -----------------------------
+    public function maps(): GoogleMapsClient
     {
-        $this->client = $client;
+        return new GoogleMapsClient($this->client);
     }
 
-    /**
-     * Perform an autocomplete on Google Maps
-     *
-     * @param string $query The search query (required)
-     * @return array
-     * @throws InvalidArgumentException
-     */
-    public function autoCompleteGmaps(?string $query = null): array
+    public function search(): GoogleSearchClient
     {
-        if (empty($query)) {
-            throw new InvalidArgumentException('Query parameter is required');
-        }
-
-        // Build query parameters
-        $queryParams = ['query' => $query];
-
-        return $this->client->get(ScrappaEndpoint::MAPS_AUTOCOMPLETE, $queryParams);
+        return new GoogleSearchClient($this->client);
     }
 
-    /**
-     * Perform an advanced search on Google Maps
-     *
-     * @param string $query The search query (required)
-     * @param array $params Additional parameters (zoom, lat, lon, limit)
-     * @param integer $params['zoom'] (required)
-     * @return array
-     * @throws InvalidArgumentException
-     */
-    public function advancedSearchGmaps(?string $query = null, array $params = []): array
+    public function translate(): GoogleTranslateClient
     {
-        if (empty($query)) {
-            throw new InvalidArgumentException('The "query" parameter is required.');
-        }
-
-        if (empty($params['zoom'])) {
-            throw new InvalidArgumentException('The "zoom" parameter is required.');
-        }
-
-        // Build query parameters
-        $queryParams = ['query' => $query];
-
-        // Add optional parameters if provided
-        if (!empty($params)) {
-            $queryParams = array_merge($queryParams, $params);
-        }
-
-        // Filter out null/empty values except for query
-        $queryParams = array_filter($queryParams, function ($value, $key) {
-            return in_array($key, ['query', 'zoom'], true) || (!is_null($value) && $value !== '');
-        }, ARRAY_FILTER_USE_BOTH);
-
-        return $this->client->get(ScrappaEndpoint::MAPS_ADVANCE_SEARCH, $queryParams);
+        return new GoogleTranslateClient($this->client);
     }
 
-    /**
-     * Retrieve Google Reviews for a specific place.
-     *
-     * @param string $business_id The search query (required)
-     * @param array $params Additional parameters (search, sort, limit, page)
-     * @param integer $params['sort'] (required)
-     * @return array
-     * @throws InvalidArgumentException
-     */
-    public function googleReviewsGmaps(?string $business_id = null, array $params = []): array
+    public function images(): GoogleImagesClient
     {
-        if (empty($business_id)) {
-            throw new InvalidArgumentException('The "business_id" parameter is required.');
-        }
-
-        if (empty($params['sort'])) {
-            throw new InvalidArgumentException('The "sort" parameter is required.');
-        }
-
-        // Build query parameters
-        $queryParams = ['business_id' => $business_id];
-
-        // Add optional parameters if provided
-        if (!empty($params)) {
-            $queryParams = array_merge($queryParams, $params);
-        }
-
-        // Filter out null/empty values except for query
-        $queryParams = array_filter($queryParams, function ($value, $key) {
-            return in_array($key, ['business_id', 'sort'], true) || (!is_null($value) && $value !== '');
-        }, ARRAY_FILTER_USE_BOTH);
-
-        return $this->client->get(ScrappaEndpoint::MAPS_GOOGLE_REVIEW, $queryParams);
+        return new GoogleImagesClient($this->client);
     }
 
-    /**
-     * Retrieve Google Reviews for a specific place.
-     *
-     * @param string $business_id The search query (required)
-     * @return array
-     * @throws InvalidArgumentException
-     */
-    public function businessDetailsGmaps(?string $business_id = null): array
+    public function youtube(): YouTubeClient
     {
-        if (empty($business_id)) {
-            throw new InvalidArgumentException('The "business_id" parameter is required.');
-        }
-
-        // Build query parameters
-        $queryParams = ['business_id' => $business_id];
-
-        return $this->client->get(ScrappaEndpoint::MAPS_BUSINESS_DETAILS, $queryParams);
+        return new YouTubeClient($this->client);
     }
 
+    // -----------------------------
+    // Global utilities
+    // -----------------------------
 
     /**
      * Generic method to make GET requests with parameters
