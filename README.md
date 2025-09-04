@@ -368,5 +368,5 @@ try {
 > 👉 See the full list of accepted values here: [Google Cloud Translate Supported Languages](https://cloud.google.com/translate/docs/languages#try-it-for-yourself)
 
 #### Google Images – Google Images API
-- `query` *(required, string)*: The search term that will be used to scrape the images.
+- `q` *(required, string)*: The search term that will be used to scrape the images.
 - `page` *(optional, integer)*: Specifies which page of search results to retrieve.Usage:page=1 or omitted - Returns the first page of resultspage=2 - Returns the second page of resultspage=3 - Returns the third page of results
