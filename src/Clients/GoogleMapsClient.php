@@ -2,7 +2,6 @@
 
 namespace JohnPaulMontilla\Scrappa\Clients;
 
-use InvalidArgumentException;
 use JohnPaulMontilla\Scrappa\RestClient;
 use JohnPaulMontilla\Scrappa\Support\ScrappaEndpoint;
 use JohnPaulMontilla\Scrappa\Exceptions\ScrappaValidationException;
