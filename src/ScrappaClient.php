@@ -22,17 +22,17 @@ class ScrappaClient
         return new GoogleMapsClient($this->client);
     }
 
-    public function search(): GoogleSearchClient
+    public function googleSearch(): GoogleSearchClient
     {
         return new GoogleSearchClient($this->client);
     }
 
-    public function translate(): GoogleTranslateClient
+    public function googleTranslate(): GoogleTranslateClient
     {
         return new GoogleTranslateClient($this->client);
     }
 
-    public function images(): GoogleImagesClient
+    public function googleImages(): GoogleImagesClient
     {
         return new GoogleImagesClient($this->client);
     }
