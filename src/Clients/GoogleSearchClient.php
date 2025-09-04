@@ -13,7 +13,7 @@ class GoogleSearchClient
     ) {}
 
     /**
-     * Perform an autocomplete on Google Maps
+     * Perform an search on Google
      *
      * @param string $query The search query (required)
      * @return array

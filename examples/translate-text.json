@@ -1,0 +1,10 @@
+{
+    "parameters": {
+        "text": "Good Morning",
+        "source": "en",
+        "target": "tl"
+    },
+    "results": {
+        "translated_text": "Magandang umaga"
+    }
+}

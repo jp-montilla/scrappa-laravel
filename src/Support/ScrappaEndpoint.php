@@ -13,4 +13,7 @@ final class ScrappaEndpoint
 
     // GOOGLE SEARCH API
     public const SEARCH = 'search';
+
+    // GOOGLE TRANSLATE API
+    public const TRANSLATE = 'google-translate';
 }
