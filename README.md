@@ -257,6 +257,20 @@ $response = Scrappa::googleImages()->images("Nice dog", [
 > ##### 📌 Sample API Response
 > See full response example here: [images-result.json](./examples/images-result.json)
 
+### Youtube API Support
+---
+
+#### 📹 Video Info
+
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Google Image search (requires query parameter)
+$response = $response = Scrappa::youtube()->video('https://youtu.be/sUtRcpma8iU?si=q9clbqmNDD6fJFv4');
+```
+> ##### 📌 Sample API Response
+> See full response example here: [youtube.json](./examples/youtube.json)
+
 
 ### 🔧 Advanced Usage
 ---
@@ -370,3 +384,6 @@ try {
 #### Google Images – Google Images API
 - `q` *(required, string)*: The search term that will be used to scrape the images.
 - `page` *(optional, integer)*: Specifies which page of search results to retrieve.Usage:page=1 or omitted - Returns the first page of resultspage=2 - Returns the second page of resultspage=3 - Returns the third page of results
+
+#### YouTube Video Info – YouTube API
+- `url` *(required, string)*: The URL of the YouTube Video

@@ -19,4 +19,7 @@ final class ScrappaEndpoint
 
     // GOOGLE IMAGES API
     public const IMAGES = 'images';
+
+    // YOUTUBE API
+    public const YOUTUBE = 'youtube/video';
 }

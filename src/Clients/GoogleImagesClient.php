@@ -23,7 +23,7 @@ class GoogleImagesClient
     public function images(?string $query = null, array $params = []): array
     {
         if (empty($query)) {
-            throw ScrappaValidationException::missingParameter('query');
+            throw ScrappaValidationException::missingParameter('q');
         }
 
         // Build query parameters
