@@ -238,6 +238,25 @@ $response = Scrappa::googleSearch()->search([
 > ##### 📌 Sample API Response
 > See full response example here: [translate-text.json](./examples/translate-text.json)
 
+### Google Images API Support
+---
+
+#### 🖼️ Image Search
+
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Google Image search (requires query parameter)
+$response = $response = Scrappa::googleImages()->images('Nice dog');
+
+// Web Search with additional optional parameter
+$response = Scrappa::googleImages()->images("Nice dog", [
+    'page' => 2, // optional
+]);
+```
+> ##### 📌 Sample API Response
+> See full response example here: [images-result.json](./examples/images-result.json)
+
 
 ### 🔧 Advanced Usage
 ---
@@ -347,3 +366,7 @@ try {
 > `source`: `"en"`  
 > `target`: `"de"`  
 > 👉 See the full list of accepted values here: [Google Cloud Translate Supported Languages](https://cloud.google.com/translate/docs/languages#try-it-for-yourself)
+
+#### Google Images – Google Images API
+- `query` *(required, string)*: The search term that will be used to scrape the images.
+- `page` *(optional, integer)*: Specifies which page of search results to retrieve.Usage:page=1 or omitted - Returns the first page of resultspage=2 - Returns the second page of resultspage=3 - Returns the third page of results
