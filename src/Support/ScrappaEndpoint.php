@@ -16,4 +16,7 @@ final class ScrappaEndpoint
 
     // GOOGLE TRANSLATE API
     public const TRANSLATE = 'google-translate';
+
+    // GOOGLE IMAGES API
+    public const IMAGES = 'images';
 }
