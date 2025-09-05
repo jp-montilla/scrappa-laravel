@@ -15,6 +15,7 @@ A simple and clean Laravel wrapper for the Scrappa API, allowing you to make HTT
 - 🗺️ Simple Search 
 - ⭐ Google Reviews
 - 🏢 Business Details
+- 📝 Google Single Review
 
 ### Google Search API Support
 - 🌐 Web Search
@@ -195,6 +196,19 @@ $response = Scrappa::maps()->businessDetails('0x3397d32e0a1a024f:0x6d9ee9a72ebf0
 ```
 > ##### 📌 Sample API Response
 > See full response example here: [business-details.json](./examples/business-details.json)
+
+#### 📝 Google Single Review
+```php
+use JohnPaulMontilla\Scrappa\Facades\Scrappa;
+
+// Get Google Reviews (requires business_id)
+$response = Scrappa::maps()->googleSingleReview([
+    'review_id' => 'ChZDSUhNMG9nS0VJQ0FnSUNRaE4tOEhREAE',
+    'business_id' => '0x3397c9fbfdca4c77:0x1f2e4f2f0f88b8e9'
+]);
+```
+> ##### 📌 Sample API Response
+> See full response example here: [google-single-review.json](./examples/google-single-review.json)
 
 
 ### Google Search API Support
