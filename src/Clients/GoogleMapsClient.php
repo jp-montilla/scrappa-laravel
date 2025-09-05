@@ -81,7 +81,7 @@ class GoogleMapsClient
         }
 
         return $this->client->get(
-            ScrappaEndpoint::MAP_SIMPLE_SEARCH,
+            ScrappaEndpoint::MAPS_SIMPLE_SEARCH,
             ['query' => $query]
         );
     }
@@ -138,5 +138,25 @@ class GoogleMapsClient
             ScrappaEndpoint::MAPS_BUSINESS_DETAILS,
             ['business_id' => $business_id]
         );
+    }
+
+    /**
+     * Retrieve Google Single Reviews for a specific business.
+     *
+     * @param array $params parameters (review_id, business_id) (required)
+     * @return array
+     * @throws ScrappaValidationException
+     */
+    public function googleSingleReview(array $params = []): array
+    {
+        if (empty($params['review_id'])) {
+            throw ScrappaValidationException::missingParameter('review_id');
+        }
+
+        if (empty($params['business_id'])) {
+            throw ScrappaValidationException::missingParameter('business_id');
+        }
+
+        return $this->client->get(ScrappaEndpoint::MAPS_GOOGLE_SINGLE_REVIEW, $params);
     }
 }
