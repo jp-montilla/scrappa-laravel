@@ -141,10 +141,9 @@ class GoogleMapsClient
     }
 
     /**
-     * Retrieve Google Reviews for a specific place.
+     * Retrieve Google Single Reviews for a specific business.
      *
-     * @param array $params parameters (review_id, business_id)
-     * @param integer $params['sort'] (required)
+     * @param array $params parameters (review_id, business_id) (required)
      * @return array
      * @throws ScrappaValidationException
      */

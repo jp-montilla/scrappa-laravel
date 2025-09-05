@@ -363,7 +363,11 @@ try {
 - `page` *(optional, string)*: Page token for pagination  
 
 #### Business Details – Google Maps API
-- `business_id` *(required, string)*: The unique Google Business ID (format: `0x...:0x...`) that identifies a specific place or business on Google Maps  
+- `business_id` *(required, string)*: The unique Google Business ID (format: `0x...:0x...`) that identifies a specific place or business on Google Maps 
+
+#### Google Single Review – Google Maps API
+- `review_id` *(required, string)*: The Google review ID (e.g. ChZDSUhNMG9nS0VJQ0FnSUNRaE4tOEhREAE)
+- `business_id` *(required, string)*: The Google Maps business ID (e.g. 0x47bd0ea521300001:0x918691af860a8cc0)
 
 #### Google Search – Google Search API
 - `query` *(required, string)*: The stuff you're searching for on Google Search.
